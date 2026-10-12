@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Receipt – Brew Haven</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/receipt.css">
+</head>
+<body>
+  <main class="wrap">
+
+    <!-- Receipt (filled in by js/receipt.js) -->
+    <article class="receipt" id="receipt" hidden>
+      <header class="r-head">
+        <span class="logo">☕</span>
+        <h1>Brew Haven</h1>
+        <p>124 Market, Angeles City, Pampanga</p>
+      </header>
+
+      <dl class="meta">
+        <div><dt>Receipt no.</dt><dd id="rId"></dd></div>
+        <div><dt>Date</dt><dd id="rDate"></dd></div>
+        <div><dt>Time</dt><dd id="rTime"></dd></div>
+      </dl>
+
+      <table class="items">
+        <thead><tr><th>Item</th><th>Qty</th><th>Price</th><th>Amount</th></tr></thead>
+        <tbody id="rItems"></tbody>
+      </table>
+
+      <dl class="totals">
+        <div><dt>Subtotal</dt><dd id="rSub"></dd></div>
+        <div><dt>Shipping</dt><dd id="rShip"></dd></div>
+        <div><dt>Tax (8%)</dt><dd id="rTax"></dd></div>
+        <div class="grand"><dt>Total paid</dt><dd id="rTotal"></dd></div>
+      </dl>
+
+      <footer class="r-foot">
+        <p><strong>Thank you for your order!</strong></p>
+        <p>Freshly roasted within 7 days of delivery.</p>
+        <div class="barcode" aria-hidden="true"></div>
+      </footer>
+    </article>
+
+    <!-- Shown when there is no order to display -->
+    <section class="empty" id="noOrder" hidden>
+      <h1>No receipt yet</h1>
+      <p>Place an order from the cart and your receipt will appear here.</p>
+      <a class="btn btn-orange" href="index.html#menu">Browse the menu</a>
+    </section>
+
+    <div class="actions" id="actions" hidden>
+      <button class="btn btn-dark" id="printBtn">Print or save as PDF</button>
+      <a class="btn btn-ghost" href="index.html#home">Back to home</a>
+    </div>
+  </main>
+  <script src="js/receipt.js"></script>
+</body>
+</html>

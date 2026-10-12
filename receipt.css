@@ -1,0 +1,66 @@
+/* ===== 1. TOKENS & BASE ===== */
+:root {
+  --cream: #fbf4ea; --paper: #fffdf8; --espresso: #3a1f12; --orange: #f08a00; --sand: #f3d9bf; --muted: #8b7566;
+  --serif: "Playfair Display", Georgia, serif; --sans: "DM Sans", system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+body { font-family: var(--sans); color: var(--espresso); background: var(--cream); min-height: 100vh; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+.wrap { max-width: 460px; margin: 0 auto; padding: 32px 16px 48px; }
+
+/* ===== 2. RECEIPT PAPER ===== */
+.receipt { position: relative; background: var(--paper); padding: 28px 24px 34px; box-shadow: 0 12px 32px rgba(58, 31, 18, .15); animation: print .6s ease-out; }
+/* zig-zag torn edges top and bottom */
+.receipt::before, .receipt::after { content: ""; position: absolute; left: 0; right: 0; height: 10px;
+  background: linear-gradient(135deg, var(--cream) 50%, transparent 50%) 0 0 / 14px 14px,
+              linear-gradient(225deg, var(--cream) 50%, transparent 50%) 0 0 / 14px 14px; }
+.receipt::before { top: -1px; }
+.receipt::after { bottom: -1px; transform: scaleY(-1); }
+@keyframes print { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0); } }
+
+.r-head { text-align: center; padding-bottom: 16px; border-bottom: 2px dashed var(--sand); }
+.logo { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--orange); }
+.r-head h1 { font-family: var(--serif); font-size: 26px; margin: 8px 0 2px; }
+.r-head p { font-size: 12px; color: var(--muted); }
+
+/* ===== 3. DETAILS ===== */
+dl > div { display: flex; justify-content: space-between; gap: 12px; }
+.meta { padding: 14px 0; border-bottom: 2px dashed var(--sand); font-size: 12px; }
+.meta div { padding: 2px 0; }
+.meta dt { color: var(--muted); }
+.meta dd { font-weight: 700; }
+
+.items { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+.items th { text-align: left; font-size: 11px; color: var(--muted); font-weight: 500; padding-bottom: 8px; border-bottom: 1px solid var(--sand); }
+.items td { padding: 8px 0; vertical-align: top; }
+.items th:nth-child(n+2), .items td:nth-child(n+2) { text-align: right; }
+.items td:first-child { font-weight: 500; }
+
+.totals { padding-top: 12px; border-top: 2px dashed var(--sand); font-size: 13px; }
+.totals div { padding: 4px 0; color: var(--muted); }
+.totals .grand { margin-top: 8px; padding-top: 12px; border-top: 1px solid var(--sand); color: var(--espresso); font-family: var(--serif); font-size: 22px; font-weight: 700; }
+
+.r-foot { margin-top: 22px; text-align: center; font-size: 12px; color: var(--muted); display: grid; gap: 4px; }
+.r-foot strong { color: var(--espresso); font-size: 14px; }
+.barcode { height: 44px; margin-top: 14px; background: repeating-linear-gradient(90deg, var(--espresso) 0 2px, transparent 2px 4px, var(--espresso) 4px 5px, transparent 5px 9px, var(--espresso) 9px 12px, transparent 12px 14px); opacity: .85; }
+
+/* ===== 4. BUTTONS & EMPTY STATE ===== */
+.actions { display: grid; gap: 10px; margin-top: 28px; }
+.btn { display: block; padding: 15px; border-radius: 999px; font: 700 15px var(--sans); text-align: center; text-decoration: none; border: 0; cursor: pointer; }
+.btn-dark { background: var(--espresso); color: #fff; }
+.btn-orange { background: var(--orange); color: #fff; }
+.btn-ghost { border: 1.5px solid var(--sand); color: var(--espresso); }
+.empty { text-align: center; background: var(--paper); padding: 40px 24px; border-radius: 22px; display: grid; gap: 12px; }
+.empty h1 { font-family: var(--serif); }
+.empty p { color: var(--muted); font-size: 14px; }
+
+/* ===== 5. LARGER SCREENS & PRINT ===== */
+@media (min-width: 768px) { .wrap { max-width: 520px; padding-top: 56px; } .receipt { padding: 36px 36px 42px; } }
+@media (prefers-reduced-motion: reduce) { .receipt { animation: none; } }
+@media print {
+  body { background: #fff; }
+  .wrap { max-width: 100%; padding: 0; }
+  .receipt { box-shadow: none; animation: none; }
+  .receipt::before, .receipt::after, .actions { display: none; }
+}

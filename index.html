@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Brew Haven – Artistry in Every Pour</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">gi
+
+  <!-- ========== HEADER ========== -->
+  <header class="topbar">
+    <a class="brand" href="#home" data-go="home"><span class="logo">☕</span>Brew Haven</a>
+    <button class="icon-btn" id="cartBtn" data-go="cart" aria-label="Open cart">🛍<span class="badge" id="cartBadge" hidden>0</span></button>
+  </header>
+
+  <main>
+    <!-- ========== HOME ========== -->
+    <section class="screen active" id="home">
+      <div class="home-hero">
+      <div class="home-copy">
+      <p class="eyebrow">Crafting intelligence since 2018</p>
+      <h1 class="display">Artistry in <em>Every Pour.</em></h1>
+      <p class="lead">Your neighborhood specialty coffee shop where every cup tells a story of passion.</p>
+      </div>
+
+      <div class="hero-card">
+          <img class="cover" src="images/coffee machine.jpg" alt="Warm cafe interior with wooden walls and hanging lamps">
+        <span class="pill-tag">Open now</span>
+        <div class="hero-item">
+          <img class="thumb" src="images/latte.jpg" alt="Signature latte with heart latte art">
+          <div><strong>Signature Latte</strong><br><small>$8.50</small></div>
+          <button class="round-btn" data-add="latte" aria-label="Add Signature Latte">+</button>
+        </div>
+      </div>
+
+      <div class="cta">
+        <button class="btn btn-dark" data-go="menu">Browse Our Menu</button>
+        <button class="btn btn-ghost" data-go="story">Watch Our Story</button>
+      </div>
+      </div>
+
+      <div class="marquee" aria-hidden="true"><span>Coffee Roasters · Fresh Daily · Single Origin · Slow Bar · </span></div>
+
+      <div class="info-row">
+      <article class="info-card">
+        <h3>Visit Us</h3>
+        <p>124 Market, Angeles City, Pampanga</p>
+        <a href="#" class="link">Get directions</a>
+      </article>
+      <article class="info-card dark">
+        <h3>Open Daily</h3>
+        <p>Weekdays 7am – 8pm<br>Weekends 8am – 9pm</p>
+        <a href="#" class="link">Check wait times</a>
+      </article>
+      </div>
+
+      <footer class="footer">
+        <span class="logo">☕</span>
+        <strong>Brew Haven</strong>
+        <nav><a href="#" data-go="menu">Menu</a><a href="#" data-go="story">Story</a><a href="#">Visit</a></nav>
+        <small>© 2026 Brew Haven. All rights reserved.</small>
+      </footer>
+    </section>
+
+    <!-- ========== STORY ========== -->
+    <section class="screen" id="story">
+      <div class="story-top">
+      <div class="story-copy">
+      <p class="eyebrow">Est. 2018</p>
+      <h2 class="display sm">More Than Just <em>Coffee.</em></h2>
+      <p class="lead italic" id="storyQuote"></p>
+      </div>
+
+      <div class="hero-card short">
+        <img class="cover" src="images/images.jpg" alt="Freshly roasted coffee beans">
+        <div class="note"><span class="avatar">👩‍🍳</span><div><strong id="storyTitle"></strong><br><small id="storyText"></small></div></div>
+      </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat dark"><b>15+</b><small>Years experience</small></div>
+        <div class="stat orange"><b>2M+</b><small>Cups served</small></div>
+        <div class="stat wide"><b>100%</b><small>Local community</small></div>
+      </div>
+
+      <div class="rating" aria-label="Rated 5 out of 5">★★★★★ <small>Our promise</small></div>
+      <div class="dots" id="storyDots"></div>
+
+      <div class="row">
+        <button class="btn btn-orange" id="storyBack">‹ Back</butt`on>
+        <button class="btn btn-dark" id="storyNext">Next Story ›</button>
+      </div>
+    </section>
+
+    <!-- ========== MENU ========== -->
+    <section class="screen" id="menu">
+      <h2 class="display sm">Our Specialty <em>Menu</em></h2>
+      <p class="lead">Roasted daily and made with care, curated for the perfect experience.</p>
+
+      <div class="chips" role="tablist">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="hot">🔥 Hot Coffee</button>
+        <button class="chip" data-filter="cold">🧊 Cold It</button>
+      </div>
+
+      <h3 class="section-title">House Specials</h3>
+      <div class="list" id="specialsList"></div>
+
+      <h3 class="section-title">Fresh Bakes</h3>
+      <div class="bakes" id="bakesList"></div>
+
+      <div class="delivery">🚚 <div><strong>Free Delivery</strong><br><small>On orders over ₱500</small></div></div>
+    </section>
+
+    <!-- ========== CART ========== -->
+    <section class="screen" id="cart">
+      <a href="#" class="back" data-go="menu">‹ Return to menu</a>
+      <h2 class="display sm">Your Cart</h2>
+
+      <div class="cart-layout">
+      <div class="cart-main">
+
+      <div class="empty" id="cartEmpty">
+        <span class="empty-icon">🛍</span>
+        <h3>Cart is feeling light</h3>
+        <p>You haven't added any drinks yet. Our freshly roasted seasonal blends are waiting.</p>
+        <button class="btn btn-orange" data-go="menu">Explore Our Blends</button>
+      </div>
+
+      <ul class="cart-list" id="cartList"></ul>
+      </div>
+
+      <div class="summary">
+        <h3>Order Summary</h3>
+        <dl>
+          <div><dt>Subtotal</dt><dd id="sumSub">₱0.00</dd></div>
+          <div><dt>Shipping</dt><dd id="sumShip">Calculated at checkout</dd></div>
+          <div><dt>Estimated Tax</dt><dd id="sumTax">₱0.00</dd></div>
+          <div class="total"><dt>Total</dt><dd id="sumTotal">₱0.00</dd></div>
+        </dl>
+        <button class="btn btn-dark" id="checkoutBtn" disabled>Checkout</button>
+        <p class="guarantee">✔ Freshness guaranteed. Roasted within 7 days of delivery.</p>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== BOTTOM NAV ========== -->
+  <nav class="tabbar" aria-label="Main">
+    <button class="tab active" data-go="home"><i>🏠</i>Home</button>
+    <button class="tab" data-go="story"><i>📖</i>Story</button>
+    <button class="tab" data-go="menu"><i>☕</i>Menu</button>
+    <button class="tab" data-go="cart"><i>🛒</i>Cart</button>
+  </nav>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Product image templates. Image paths are managed in index.html. -->
+  <div hidden aria-hidden="true">
+    <template id="img-latte"><img class="thumb" src="images/latte.jpg" alt="Signature Latte"></template>
+    <template id="img-cap"><img class="thumb" src="images/latte2.jpg" alt="Cappuccino"></template>
+    <template id="img-cold"><img class="thumb" src="images/saltcaramel.jpg" alt="Cold Latte"></template>
+    <template id="img-butter"><img class="thumb" src="images/roll.jpg" alt="Butter Croissant"></template>
+    <template id="img-cinn"><img class="thumb" src="images/bread.jpg" alt="Cinnamon Roll"></template>
+  </div>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
