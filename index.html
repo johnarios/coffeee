@@ -14,8 +14,14 @@
 
   <!-- ========== HEADER ========== -->
   <header class="topbar">
-    <a class="brand" href="#home" data-go="home"><span class="logo">☕</span>Brew Haven</a>
-    <button class="icon-btn" id="cartBtn" data-go="cart" aria-label="Open cart">🛍<span class="badge" id="cartBadge" hidden>0</span></button>
+    <a class="brand" href="#home" data-go="home">
+      <img src="images/coffee-beans.png" alt="Brew Haven Logo" class="logo-img">
+      Brew Haven
+    </a>
+    <button class="icon-btn" id="cartBtn" data-go="cart" aria-label="Open cart">
+      <img src="images/shopping-bag.png" alt="Cart" class="cart-icon">
+      <span class="badge" id="cartBadge" hidden>0</span>
+    </button>
   </header>
 
   <main>
@@ -60,7 +66,7 @@
       </div>
 
       <footer class="footer">
-        <span class="logo">☕</span>
+        <img src="images/coffee-beans.png" alt="Logo" class="logo-img">
         <strong>Brew Haven</strong>
         <nav><a href="#" data-go="menu">Menu</a><a href="#" data-go="story">Story</a><a href="#">Visit</a></nav>
         <small>© 2026 Brew Haven. All rights reserved.</small>
@@ -78,7 +84,10 @@
 
       <div class="hero-card short">
         <img class="cover" src="images/images.jpg" alt="Freshly roasted coffee beans">
-        <div class="note"><span class="avatar">👩‍🍳</span><div><strong id="storyTitle"></strong><br><small id="storyText"></small></div></div>
+        <div class="note">
+          <img src="images/avatar-barista.jpg" alt="Barista Avatar" class="avatar-img">
+          <div><strong id="storyTitle"></strong><br><small id="storyText"></small></div>
+        </div>
       </div>
       </div>
 
@@ -92,7 +101,7 @@
       <div class="dots" id="storyDots"></div>
 
       <div class="row">
-        <button class="btn btn-orange" id="storyBack">‹ Back</butt`on>
+        <button class="btn btn-orange" id="storyBack">‹ Back</button>
         <button class="btn btn-dark" id="storyNext">Next Story ›</button>
       </div>
     </section>
@@ -104,8 +113,12 @@
 
       <div class="chips" role="tablist">
         <button class="chip active" data-filter="all">All</button>
-        <button class="chip" data-filter="hot">🔥 Hot Coffee</button>
-        <button class="chip" data-filter="cold">🧊 Cold It</button>
+        <button class="chip" data-filter="hot">
+          <img src="images/iced-coffee.png" alt="Hot" class="chip-icon"> Hot Coffee
+        </button>
+        <button class="chip" data-filter="cold">
+          <img src="images/coffee-cup.png" alt="Cold" class="chip-icon"> Cold It
+        </button>
       </div>
 
       <h3 class="section-title">House Specials</h3>
@@ -114,7 +127,10 @@
       <h3 class="section-title">Fresh Bakes</h3>
       <div class="bakes" id="bakesList"></div>
 
-      <div class="delivery">🚚 <div><strong>Free Delivery</strong><br><small>On orders over ₱500</small></div></div>
+      <div class="delivery">
+        <img src="images/fast-delivery.png" alt="Delivery Truck" class="delivery-icon">
+        <div><strong>Free Delivery</strong><br><small>On orders over ₱500</small></div>
+      </div>
     </section>
 
     <!-- ========== CART ========== -->
@@ -126,7 +142,7 @@
       <div class="cart-main">
 
       <div class="empty" id="cartEmpty">
-        <span class="empty-icon">🛍</span>
+        <img src="images/empty-cart.png" alt="Empty Cart" class="empty-icon-img">
         <h3>Cart is feeling light</h3>
         <p>You haven't added any drinks yet. Our freshly roasted seasonal blends are waiting.</p>
         <button class="btn btn-orange" data-go="menu">Explore Our Blends</button>
@@ -152,10 +168,18 @@
 
   <!-- ========== BOTTOM NAV ========== -->
   <nav class="tabbar" aria-label="Main">
-    <button class="tab active" data-go="home"><i>🏠</i>Home</button>
-    <button class="tab" data-go="story"><i>📖</i>Story</button>
-    <button class="tab" data-go="menu"><i>☕</i>Menu</button>
-    <button class="tab" data-go="cart"><i>🛒</i>Cart</button>
+    <button class="tab active" data-go="home">
+      <img src="images/home (1).png" alt="Home" class="nav-icon"> Home
+    </button>
+    <button class="tab" data-go="story">
+      <img src="images/book.png" alt="Story" class="nav-icon"> Story
+    </button>
+    <button class="tab" data-go="menu">
+      <img src="images/menu (1).png" alt="Menu" class="nav-icon"> Menu
+    </button>
+    <button class="tab" data-go="cart">
+      <img src="images/shopping-bag.png" alt="Cart" class="nav-icon"> Cart
+    </button>
   </nav>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
